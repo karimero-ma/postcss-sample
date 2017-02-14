@@ -8,9 +8,17 @@
   transition: all 1em linear;
 }
 
+.list {
+  width: 100px;
+
+  &-header {
+    background-color: #fff;
+  }
+}
+
 .btn {
   min-height: 10;
-  
+
   &-primary {
     background-color: red;
   }

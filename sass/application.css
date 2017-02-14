@@ -1,11 +1,8 @@
 .page-layout {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex; }
 
 .test {
   border-radius: 2px;
-  -webkit-transition: all 1em linear;
   transition: all 1em linear; }
 
 .btn {
@@ -17,3 +14,5 @@
   /*
     @include sprite($sprite-applier);
   */ }
+
+/*# sourceMappingURL=application.css.map */

@@ -4,10 +4,12 @@ var postcss = require('gulp-postcss');
 
 //var gulpscss = require('gulp-scss');
 
-
-
+/**
+ * スプライト作成
+ */
 gulp.task('sprite', () => {
   var spritesmith = require('gulp.spritesmith');
+  
   let spriteData = gulp.src('./sprite/*.gif')
     .pipe(spritesmith({
       imgName: 'sprite.png',                        // スプライト画像
@@ -18,10 +20,12 @@ gulp.task('sprite', () => {
         sprite.name = "sprite-" + sprite.name;      // 生成される CSS テンプレートに変数の一覧を記述
       }
   }));
-  spriteData.img
-    .pipe(gulp.dest('./public/assets/images'));     // imgName で指定したスプライト画像の保存先
-  return spriteData.css
-    .pipe(gulp.dest('./sass'));                     // cssName で指定した CSS テンプレートの保存先
+  
+  // imgName で指定したスプライト画像の保存先
+  spriteData.img.pipe(gulp.dest('./public/assets/images'));     
+  
+  // cssName で指定した CSS テンプレートの保存先
+  return spriteData.css.pipe(gulp.dest('./sass'));                     
 });
  
 
@@ -39,10 +43,11 @@ gulp.task('analyze-css', function () {
 
 gulp.task('build-css', function () {
   var cssnano = require('cssnano');
-
-  return gulp.src('public/css/application.css')
+  var autoprefixer = require('autoprefixer');
+  return gulp.src('sass/application.css')
     .pipe(postcss([
-      cssnano()
+      autoprefixer()
+      //cssnano()
     ]))
     .pipe(gulp.dest('public/css'));
 });
