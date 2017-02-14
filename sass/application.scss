@@ -1,0 +1,25 @@
+
+.page-layout {
+  display: flex;
+}
+
+.test {
+  border-radius: 2px;
+  transition: all 1em linear;
+}
+
+.btn {
+  min-height: 10;
+  
+  &-primary {
+    background-color: red;
+  }
+}
+
+.routeicon {
+  &-applier {
+    /*
+      @include sprite($sprite-applier);
+    */
+  }
+}
