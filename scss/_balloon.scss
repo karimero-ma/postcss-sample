@@ -1,0 +1,128 @@
+@charset "UTF-8";
+
+$balloon-bgcolor: rgba(0, 0, 0, 0.8);
+$balloon-fontcolor: #e7e8e2;
+
+/* 
+吹き出し
+*/
+.balloon {
+  @include valign-middle;
+
+  background: $balloon-bgcolor;
+  border-radius: 5px;
+  color: $balloon-fontcolor;
+  display: none;
+  margin: 0;
+  min-height: 30px;
+  padding: 10px;
+  position: absolute;
+  min-width: 200px;
+  z-index: 50;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    z-index: 50;
+  }
+
+  & > * {
+    position: relative;
+    z-index: 3;
+  }
+
+  /* 吹き出し・上辺左側 */
+  &-top {
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid $balloon-bgcolor;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+
+    /* 吹き出し・上辺左側 */
+    &_left::before {
+      @extend .balloon-top;
+
+      top: -10px;
+      left: 10px;
+    }
+
+    /* 吹き出し・上辺中央 */
+    &_center::before {
+      @extend .balloon-top;
+
+      top: -10px;
+      left: calc(50% - 10px);
+    }
+
+    &_right::before {
+      @extend .balloon-top;
+
+      top: -10px;
+      right: 10px;
+    }
+  }
+
+  /* 吹き出し・右辺中央 */
+  &-right_middle::before {
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg) skew(-20deg, -20deg);
+  }
+
+  /* 吹き出し・右辺下側 */
+  &-right_bottom::before {
+    right: -10px;
+    bottom: 10px;
+    transform: rotate(45deg) skew(-20deg, -20deg);
+  }
+
+  /* 吹き出し・下辺左側 */
+  &-bottom_left::before {
+    bottom: -10px;
+    left: 10px;
+    transform: rotate(45deg) skew(20deg, 20deg);
+  }
+
+  /* 吹き出し・下辺中央 */
+  &-bottom_center::before {
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg) skew(20deg, 20deg);
+  }
+
+  /* 吹き出し・下辺右側 */
+  &-bottom_right::before {
+    bottom: -10px;
+    right: 10px;
+    transform: rotate(45deg) skew(20deg, 20deg);
+  }
+
+  /* 吹き出し・左辺上側 */
+  &-left_top::before {
+    left: -10px;
+    top: 10px;
+    transform: rotate(45deg) skew(-20deg, -20deg);
+  }
+
+  /* 吹き出し・左辺中央 */
+  &-left_middle::before {
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg) skew(-20deg, -20deg);
+  }
+
+  /* 吹き出し・左辺下側 */
+  &-left_bottom::before {
+    left: -10px;
+    bottom: 10px;
+    transform: rotate(45deg) skew(-20deg, -20deg);
+  }
+}
+
+.is-balloon-visible {
+  //display: inline-block;
+  visibility: visible;
+}

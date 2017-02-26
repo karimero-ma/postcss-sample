@@ -1,11 +1,12 @@
+@import 'mixin';
+@import 'balloon';
 
 .page-layout {
   display: flex;
 }
 
-.test {
-  border-radius: 2px;
-  transition: all 1em linear;
+.valign-middle30 {
+  @include valign-middle(50px);
 }
 
 .list {

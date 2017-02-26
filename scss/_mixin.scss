@@ -1,0 +1,9 @@
+@charset "utf-8";
+
+/*
+  文字を上下の中心に配置する
+*/
+@mixin valign-middle($height: 30px) {
+  height: $height;
+  line-height: $height;
+}

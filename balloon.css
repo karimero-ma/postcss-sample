@@ -1,0 +1,109 @@
+@charset "UTF-8";
+
+/* 吹き出し・全共通 */
+.balloon {
+  position: relative;
+  width: 200px; /* 幅 */
+  min-height: 60px; /* 最小の高さ */
+  margin: 20px; /* 外側の余白 */
+  padding: 10px; /* 内側の余白 */
+}
+
+.balloon::before {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  width: 20px; height: 20px; /* 吹き出しサイズ */
+}
+
+.balloon::after {
+  content: '';
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.balloon > * {
+  position: relative;
+  z-index: 3;
+}
+.balloon,
+.balloon::after {
+  border-radius: 5px; /* 角の丸め方 */
+}
+.balloon,
+.balloon::before {
+  box-shadow: 0 0 10px 0 rgba(163,163,163,0.50); /* ぼかし距離(第3引数)，拡散距離(第4引数)，色(第5引数) */
+}
+.balloon,
+.balloon::before,
+.balloon::after {
+  background: #fffed6; /* 背景色 */
+}
+
+/* 吹き出し・上辺左側 */
+.balloon--top_left::before {
+  top: -10px; left: 10px; /* 位置 */
+  transform: rotate(45deg) skew(20deg,20deg); /* 傾斜角(skew) */
+}
+/* 吹き出し・上辺中央 */
+.balloon--top_center::before {
+  top: -10px; left: 50%; /* 位置 */
+  transform: translateX(-50%) rotate(45deg) skew(20deg,20deg); /* 傾斜角(skew) */
+}
+/* 吹き出し・上辺右側 */
+.balloon--top_right::before {
+  top: -10px; right: 10px; /* 位置 */
+  transform: rotate(45deg) skew(20deg,20deg); /* 傾斜角(skew) */
+}
+
+/* 吹き出し・右辺上側 */
+.balloon--right_top::before {
+  right: -10px; top: 10px; /* 位置 */
+  transform: rotate(45deg) skew(-20deg,-20deg); /* 傾斜角(skew) */
+}
+/* 吹き出し・右辺中央 */
+.balloon--right_middle::before {
+  right: -10px; top: 50%; /* 位置 */
+  transform: translateY(-50%) rotate(45deg) skew(-20deg,-20deg); /* 傾斜角(skew) */
+}
+/* 吹き出し・右辺下側 */
+.balloon--right_bottom::before {
+  right: -10px; bottom: 10px; /* 位置 */
+  transform: rotate(45deg) skew(-20deg,-20deg); /* 傾斜角(skew) */
+}
+
+/* 吹き出し・下辺左側 */
+.balloon--bottom_left::before {
+  bottom: -10px; left: 10px; /* 位置 */
+  transform: rotate(45deg) skew(20deg,20deg); /* 傾斜角(skew) */
+}
+/* 吹き出し・下辺中央 */
+.balloon--bottom_center::before {
+  bottom: -10px; left: 50%; /* 位置 */
+  transform: translateX(-50%) rotate(45deg) skew(20deg,20deg); /* 傾斜角(skew) */
+}
+/* 吹き出し・下辺右側 */
+.balloon--bottom_right::before {
+  bottom: -10px; right: 10px; /* 位置 */
+  transform: rotate(45deg) skew(20deg,20deg); /* 傾斜角(skew) */
+}
+
+/* 吹き出し・左辺上側 */
+.balloon--left_top::before {
+  left: -10px; top: 10px; /* 位置 */
+  transform: rotate(45deg) skew(-20deg,-20deg); /* 傾斜角(skew) */
+}
+/* 吹き出し・左辺中央 */
+.balloon--left_middle::before {
+  left: -10px; top: 50%; /* 位置 */
+  transform: translateY(-50%) rotate(45deg) skew(-20deg,-20deg); /* 傾斜角(skew) */
+}
+/* 吹き出し・左辺下側 */
+.balloon--left_bottom::before {
+  left: -10px; bottom: 10px; /* 位置 */
+  transform: rotate(45deg) skew(-20deg,-20deg); /* 傾斜角(skew) */
+}
