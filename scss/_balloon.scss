@@ -28,11 +28,6 @@ $balloon-fontcolor: #e7e8e2;
     z-index: 50;
   }
 
-  & > * {
-    position: relative;
-    z-index: 3;
-  }
-
   /* 吹き出し・上辺左側 */
   &-top {
     width: 0;
@@ -65,18 +60,23 @@ $balloon-fontcolor: #e7e8e2;
     }
   }
 
-  /* 吹き出し・右辺中央 */
-  &-right_middle::before {
+  &-right {
+    width: 0;
+    height: 0;
+    border-right: 10px solid $balloon-bgcolor;
+    border-left: 10px solid transparent;
+    border-bottom: 10px solid transparent;
     right: -10px;
-    top: 50%;
-    transform: translateY(-50%) rotate(45deg) skew(-20deg, -20deg);
-  }
 
-  /* 吹き出し・右辺下側 */
-  &-right_bottom::before {
-    right: -10px;
-    bottom: 10px;
-    transform: rotate(45deg) skew(-20deg, -20deg);
+    /* 吹き出し・右辺中央 */
+    &_middle::before {
+      right: 50%;
+    }
+
+    /* 吹き出し・右辺下側 */
+    &_bottom::before {
+      bottom: 10px;
+    }
   }
 
   /* 吹き出し・下辺左側 */

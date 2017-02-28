@@ -1,12 +1,105 @@
+@charset "UTF-8";
+/*
+  文字を上下の中心に配置する
+*/
+/* 
+吹き出し
+*/
+.balloon {
+  height: 30px;
+  line-height: 30px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  color: #e7e8e2;
+  display: none;
+  margin: 0;
+  min-height: 30px;
+  padding: 10px;
+  position: absolute;
+  min-width: 200px;
+  z-index: 50;
+  /* 吹き出し・上辺左側 */
+  /* 吹き出し・下辺左側 */
+  /* 吹き出し・下辺中央 */
+  /* 吹き出し・下辺右側 */
+  /* 吹き出し・左辺上側 */
+  /* 吹き出し・左辺中央 */
+  /* 吹き出し・左辺下側 */ }
+  .balloon::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    z-index: 50; }
+  .balloon-top, .balloon-top_left::before, .balloon-top_center::before, .balloon-top_right::before {
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid rgba(0, 0, 0, 0.8);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    /* 吹き出し・上辺左側 */
+    /* 吹き出し・上辺中央 */ }
+    .balloon-top_left::before {
+      top: -10px;
+      left: 10px; }
+    .balloon-top_center::before {
+      top: -10px;
+      left: calc(50% - 10px); }
+    .balloon-top_right::before {
+      top: -10px;
+      right: 10px; }
+  .balloon-right {
+    width: 0;
+    height: 0;
+    border-right: 10px solid rgba(0, 0, 0, 0.8);
+    border-left: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    right: -10px;
+    /* 吹き出し・右辺中央 */
+    /* 吹き出し・右辺下側 */ }
+    .balloon-right_middle::before {
+      right: 50%; }
+    .balloon-right_bottom::before {
+      bottom: 10px; }
+  .balloon-bottom_left::before {
+    bottom: -10px;
+    left: 10px;
+    transform: rotate(45deg) skew(20deg, 20deg); }
+  .balloon-bottom_center::before {
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg) skew(20deg, 20deg); }
+  .balloon-bottom_right::before {
+    bottom: -10px;
+    right: 10px;
+    transform: rotate(45deg) skew(20deg, 20deg); }
+  .balloon-left_top::before {
+    left: -10px;
+    top: 10px;
+    transform: rotate(45deg) skew(-20deg, -20deg); }
+  .balloon-left_middle::before {
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg) skew(-20deg, -20deg); }
+  .balloon-left_bottom::before {
+    left: -10px;
+    bottom: 10px;
+    transform: rotate(45deg) skew(-20deg, -20deg); }
+
+.is-balloon-visible {
+  visibility: visible; }
+
 .page-layout {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex; }
 
-.test {
-  border-radius: 2px;
-  -webkit-transition: all 1em linear;
-  transition: all 1em linear; }
+.valign-middle30 {
+  height: 50px;
+  line-height: 50px; }
+
+.list {
+  width: 100px; }
+  .list-header {
+    background-color: #fff; }
 
 .btn {
   min-height: 10; }
@@ -17,3 +110,5 @@
   /*
     @include sprite($sprite-applier);
   */ }
+
+/*# sourceMappingURL=application.css.map */

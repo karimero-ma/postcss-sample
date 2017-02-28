@@ -13,33 +13,31 @@
   <main style="position: relative;">
     <div class="valign-middle js-balloon" style="border: 1px solid #000">中央寄せ</div>
     <ul>
+      <li><button id="topLeft">上辺左</button></li>
+      <li><button id="topCenter">上辺中央</button></li>
+      <li><button id="topRight">上辺右</button></li>
       <li>ssssssss</li>
       <li>ssssssss</li>
-      <li>ssssssss</li>
-      <li class="js-balloon">ssssssss</li>
       <li>ssssssss</li>
       <li>ssssssss</li>
       <li>ssssssss</li>
       <li>ssssssss</li>
     </ul>
     <input type="text">
-    <div class="balloon balloon-top_left" id="saveBalloon">
-      <div>上辺左側あああああああああああああああああああああああああああああああああああ</div>
+    <div class="balloon balloon-top_left" data-for="#topLeft">
+      <div>上辺左側</div>
     </div>
-    <div class="balloon balloon-top_left">
-      <div>上辺左側あああああああああああああああああああああああああああああああああああ</div>
-    </div>
-    <div class="balloon balloon-top_center">
+    <div class="balloon balloon-top_center" data-for="#topCenter">
       <div>上辺中央</div>
     </div>
-    <div class="balloon balloon-top_right">
+    <div class="balloon balloon-top_right" data-for="#topRight">
       <div>上辺右側</div>
     </div>
 
     <div class="balloon balloon-right_top">
       <div>右辺上側</div>
     </div>
-    <div class="balloon balloon-right_middle">
+    <div class="balloon balloon-right_middle" data-for="#topMiddle">
       <div>右辺中央</div>
     </div>
     <div class="balloon balloon-right_bottom">

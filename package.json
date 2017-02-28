@@ -4,6 +4,8 @@
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+    , "start": "lite-server"
+    , "server": "lite-server -c=bs-config.json"
   },
   "author": "",
   "license": "ISC",
@@ -13,7 +15,9 @@
     "doiuse": "^2.5.0",
     "gulp": "^3.9.1",
     "gulp-postcss": "^6.3.0",
+    "gulp-scss": "^1.4.0",
     "gulp.spritesmith": "^6.3.0",
+    "light-server": "^1.1.10",
     "postcss-reporter": "^3.0.0",
     "stylelint": "^7.8.0",
     "stylelint-config-standard": "^16.0.0"

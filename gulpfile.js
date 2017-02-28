@@ -2,7 +2,7 @@ var gulp = require('gulp');
 
 var postcss = require('gulp-postcss');
 
-//var gulpscss = require('gulp-scss');
+var gulpscss = require('gulp-scss');
 
 /**
  * スプライト作成
@@ -40,6 +40,11 @@ gulp.task('analyze-css', function () {
   ]));
 });
 
+gulp.task('scss', function(){
+  gulp.src('./scss/**/*.scss')
+    .pipe(gulpscss({outputStyle: 'expanded'}))
+    .pipe(gulp.dest('./public/css/'));
+});
 
 gulp.task('build-css', function () {
   var cssnano = require('cssnano');
